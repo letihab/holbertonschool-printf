@@ -12,7 +12,7 @@
  */
 typedef struct Set
 {
-	char *specifier;
+	char specifier;
 	int (*print)(va_list arg);
 } set;
 int _printf(const char *format, ...);
