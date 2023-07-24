@@ -7,7 +7,7 @@
 #include <stdio.h>
 /**
  *struct set - function pair
- *@specifie: the format specification
+ *@specifier: the format specification
  *@print: function implemented to print data of a given specifier stdout
  */
 typedef struct Set
