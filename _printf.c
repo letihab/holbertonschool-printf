@@ -25,10 +25,10 @@ int _printf(const char *format, ...)
 
 	count = 0;
 
-	for (i = 0; format && format[i] != '\0'; i++)
+	for (i = 0; format[i]; i++)
 	{
 		find = 0;
-		if (format[i] != '%')
+		if (format[i] == '%')
 		{
 			for (j = 0; arguments[j].specifier; j++)
 			{
