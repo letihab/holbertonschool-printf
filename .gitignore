@@ -2,4 +2,4 @@
 !*.*
 *main.c
 *.o
-!man_3_page
+!man_3_printf
