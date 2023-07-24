@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{'d', print_d},
 		{'i', print_d},
 		{'s', print_str},
+		{'%', print_percent},
 		{'R', print_rot13},
 		{'r', print_rev},
 	};
@@ -57,10 +58,10 @@ int _printf(const char *format, ...)
 			else
 				count += write(1, (format + i), 1);
 		}
-	else
-	{
-		count += write(1, (format + i), 1);
-	}
+		else
+		{
+			count += write(1, (format + i), 1);
+		}
 	}
 	va_end(list);
 	return (count);
