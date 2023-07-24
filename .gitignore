@@ -1,9 +1,9 @@
 *
 !/*
 !*.*
-!/*
 *main.c
 *.o
+*.out
 <<<<<<< HEAD
 !man_3_printf
 =======

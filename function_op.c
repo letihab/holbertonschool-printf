@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
 
 /**
  * print_char - print a character
@@ -11,7 +10,7 @@ int print_char(va_list list)
 	char c;
 
 	c = (va_arg(list, int));
-	_putch(c);
+	_putchar(c);
 
 	return (1);
 }
@@ -29,7 +28,7 @@ int print_str(va_list list)
 	str = (va_arg(list, char *));
 
 	if (str == NULL)
-		str = '(null)';
+		str = "(null)";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -40,12 +39,46 @@ int print_str(va_list list)
 }
 
 /**
- * func_percent - print the sing percent
- * @list: the list of arguments the funcion id receiving
- * Return: 1 as just one of character
- */
-int print_percent(__attribute__((unused)) va_list list)
+ * print_d - print a decimal number
+ * @list: list of argument taken
+ * Return: Number
+*/
+int print_d(va_list list)
 {
-	_putchar('%');
-	return (1);
+	unsigned int m;
+	int i, k, n = 0, count = 0;
+
+	n = va_arg(list, int);
+	if (n <= INT_MAX && n >= INT_MIN)
+	{
+		if (n < 0)
+		{
+			n *= -1;
+			_putchar('-');
+			count += 1;
+		}
+		m = n;
+		for (k = 0; (m / 10) > 0; k++)
+			m = m / 10;
+
+		m = n;
+		while (k != 0)
+		{
+			for (i = 0; i < k; i++)
+				m = m / 10;
+
+			m = m % 10;
+			_putchar(m + '0');
+			count++;
+			k--;
+			m = n;
+		}
+		_putchar(m % 10 + '0');
+		count++;
+	}
+	else
+	{
+		return (-1);
+	}
+	return (count);
 }
