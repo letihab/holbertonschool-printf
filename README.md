@@ -8,7 +8,7 @@ This is a a custmom version of the printf fuction, which have the most basic fun
 
 ## How it's working
 
-
+## Exemple of output
 
 ### How to download it
 
@@ -74,8 +74,8 @@ This is a main you can use to tested out the _ptrintf function
 compile and run the executable
 
 ```Bash
-    user@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
-    user@ubuntu:~/c/printf$ ./printf
+    user@ubuntu:~/holbertonschool-printf/printf$ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
+    user@ubuntu:~/holbertonschool-printf/printf$ ./printf
     Let's try to printf a simple sentence.
     Let's try to printf a simple sentence.
     Length:[39, 39]
@@ -92,21 +92,19 @@ compile and run the executable
     Len:[12]
     Unknown:[%r]
     Unknown:[%r]
-    user@ubuntu:~/c/printf$
+    user@ubuntu:~/holbertonschool-printf/printf$
 ```
 
 You can open a man page and get more information about it.
 
 ```Bash
-user@ubuntu:~/c/printf$ **man ./man_3_printf**
+user@ubuntu:~/holbertonschool-printf/printf$ **man ./man_3_printf**
 ```
 
-## Contributing
-
-Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](https://example.org) pour savoir comment le faire.
-
 ## Versions
-**Dernière version stable :** ()
+This is the lastest version of our printf
+
+**Dernière version stable :** (https://github.com/letihab/holbertonschool-printf/tree/master)
 
 ## Authors
 
@@ -115,4 +113,4 @@ Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](https://example
 
 ## License
 
-Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+This project is licensed under ``MIT license`` - see the [LICENSE.md](LICENSE.md) for more details.
