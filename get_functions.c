@@ -10,7 +10,6 @@
 int get_functions(const char *format, va_list list, set arguments[])
 {
 	int i = 0, j = 0, count = 0;
-	va-start(list, format);
 
 	for (i = 0; format && *(format + i) != '\0'; i++)
 	{
@@ -46,5 +45,5 @@ int get_functions(const char *format, va_list list, set arguments[])
 		}
 	}
 	va_end(list);
-	return (count);
+	return count;
 }
