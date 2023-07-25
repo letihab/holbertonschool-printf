@@ -47,27 +47,40 @@ int print_str(va_list list)
 */
 int print_d(va_list list)
 {
-	int m, k, n;
-	int count = 0;
+	unsigned int m;
+	int i = 0, k = 0, n = 0, count = 0;
 
 	n = va_arg(list, int);
-
-	if (n < 0)
+	if (n <= INT_MAX && n >= INT_MIN)
 	{
-		_putchar('-');
-		count++;
-		n = -n;
-	}
+		if (n < 0)
+		{
+			n *= -1;
+			_putchar('-');
+			count += 1;
+		}
 		m = n;
-		for (k = 1; m >= 10; k *= 10)
+		for (k = 0; (m / 10) > 0; k++)
 			m /= 10;
 
-		while (k > 0)
+		m = n;
+		while (k != 0)
 		{
-			_putchar((n / k) + '0');
+			for (i = 0; i < k; i++)
+				m /= 10;
+			m %= 10;
+			_putchar(m + '0');
 			count++;
-			n %= k;
-			k /= 10;
+			k--;
+			m = n;
 		}
+		_putchar(m % 10 + '0');
+		count++;
+	}
+	else
+	{
+		return (-1);
+	}
+
 	return (count);
 }
