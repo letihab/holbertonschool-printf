@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				{
 					count += arguments[j].print(list);
 					find = 1;
-					format++;
+					i++;
 					break;
 				}
 			}
@@ -44,10 +44,9 @@ int _printf(const char *format, ...)
 
 		if (find != 1)
 		{
-			if (*(format + i) == '%' )
+			if (format[i] == '%' )
 			{
 				count += write(1, "%", 1);
-				format++;
 			}
 			else
 				count += write(1, (format + i), 1);
