@@ -55,7 +55,7 @@ int print_d(va_list list)
 	if (n < 0)
 	{
 		_putchar('-');
-		count ++;
+		count++;
 		n = -n;
 	}
 		m = n;

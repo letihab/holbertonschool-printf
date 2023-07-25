@@ -7,15 +7,13 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, count;
+	int count;
 	va_list list;
 	set arguments[] = {
 		{'c', print_char},
 		{'d', print_d},
 		{'i', print_d},
-		{'s', print_str},
-		/**{'R', print_rot13},
-		{'r', print_rev},*/
+		{'s', print_str}
 	};
 
 	if (format == NULL)
@@ -25,35 +23,7 @@ int _printf(const char *format, ...)
 
 	count = 0;
 
-	for (i = 0; format && *(format + i) != '\0'; i++)
-	{
-		if (format[i] != '%')
-			count += _putchar(format[i]);
-		else
-		{
-			for (j = 0; arguments[j].specifier; j++)
-			{
-				if (format[i + 1] == arguments[j].specifier)
-				{
-					count += arguments[j].print(list);
-					i++;
-					break;
-				}
-			}
-			if (arguments[j].specifier == 0 && format[i + 1] != ' ')
-			{
-				if (format[i + 1] != 0)
-				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					count += 2;
-					i++;
-				}
-				else
-					return (-1);
-			}
-		}
-	}
+	count = get_functions(format, list, arguments);
 	va_end(list);
 	return (count);
 }
