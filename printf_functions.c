@@ -14,8 +14,6 @@ int _printf(const char *format, ...)
 		{'d', print_d},
 		{'i', print_d},
 		{'s', print_str},
-		/*{'R', print_rot13},
-		  {'r', print_rev},*/
 	};
 
 	if (format == NULL)
@@ -43,13 +41,13 @@ int _printf(const char *format, ...)
 
 		if (!find && format[i + 1] != '\0')
 			{
-				count += write(1, &format[i], 1);
+				count += _putchar(format[i]);
 			}
 		i++;
 	     }
 		else
 		{
-			count += write(1, &format[i], 1);
+			count += _putchar(format[i]);
 		}
 	}
 	va_end(list);

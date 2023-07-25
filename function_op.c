@@ -46,16 +46,18 @@ int print_str(va_list list)
  * Return: Number
 */
 int print_d(va_list list)
-	int m, k, n, count = 0;
+{
+	int m, k, n;
+        int count = 0;
 
-           n = va_arg(list, int);
+        n = va_arg(list, int);
 
-              if (n < 0)
-		{
+        if (n < 0)
+	{
 			_putchar('-');
 			count ++;
 			n = -n;
-		}
+	 }
 		m = n;
 		for (k = 1; m >= 10; k *= 10)
 			m /= 10;
