@@ -8,8 +8,22 @@ This is a a custmom version of the printf fuction, which have the most basic fun
 
 ## How it's working
 
+- create your .c file
+- write your function of type `int print_type(va_list list)`
+- The function returns the number of characters printed to stdout.
+- Save the file
+- Add the function prototype in `main.h` file
+- Add into the argument list `{'specifier character': print_xx}`
+- compile and run.
 ## Exemple of output
+#include "main.h"
 
+int main(void)
+{
+    _printf("Hello, World!");
+
+    return (0);
+}
 ### How to download it
 
 - You can go on the repository in Github and click on the green button and copy the link or download the zip :
@@ -37,7 +51,7 @@ This is a main you can use to tested out the _ptrintf function
 ```C
     #include <limits.h>
     #include <stdio.h>
-    #include "holberton.h"
+    #include "main.h"
 
     /**
      * main - Entry point
