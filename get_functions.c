@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * get_match_func - match format with function format
+ * get_functions - match format with function format
  * @format: It's a character string
  * @list: the list of arguments the function _printf is receiving
+ * @arguments: structure of arguments use to compare
  * Return: the number of character the function is printing
  */
 int get_functions(const char *format, va_list list, set arguments[])
