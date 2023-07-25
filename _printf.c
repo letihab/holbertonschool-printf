@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 		{'d', print_d},
 		{'i', print_d},
 		{'s', print_str},
-		{'R', print_rot13},
-		{'r', print_rev},
+		/*{'R', print_rot13},
+		  {'r', print_rev},*/
 	};
 
 	if (format == NULL)
@@ -30,29 +30,25 @@ int _printf(const char *format, ...)
 		find = 0;
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-				format++;
 			for (j = 0; arguments[j].specifier; j++)
 			{
 				if (format[i + 1] == arguments[j].specifier)
 				{
 					count += arguments[j].print(list);
 					find = 1;
-					format++;
 					break;
 				}
 			}
-		}
 
-		if (find != 1)
-		{
-			if (*(format + i) == '%' )
+
+		if (!find && format[i + 1] != '\0')
 			{
-				count += write(1, "%", 1);
-				format++;
+				count += write(1, &format[i], 1);
 			}
-			else
-				count += write(1, (format + i), 1);
+		i++;
+		else
+		{
+			count += write(1, &format[i], 1);
 		}
 	}
 	va_end(list);
