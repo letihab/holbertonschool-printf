@@ -9,7 +9,7 @@ int print_char(va_list list)
 {
 	char c;
 
-	c = (va_arg(list, int));
+	c = va_arg(list, int);
 	_putchar(c);
 
 	return (1);
@@ -22,20 +22,22 @@ int print_char(va_list list)
 */
 int print_str(va_list list)
 {
-	char *str;
-	int i;
+	const char *str;
+	int count = 0;
 
-	str = (va_arg(list, char *));
+	str = va_arg(list, const char *);
 
 	if (str == NULL)
 		str = "(null)";
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (*str)
 	{
-		_putchar(str[i]);
+		_putchar(*str);
+		str++;
+		count++;
 	}
 
-	return (i);
+	return (count);
 }
 
 /**
@@ -45,40 +47,27 @@ int print_str(va_list list)
 */
 int print_d(va_list list)
 {
-	unsigned int m;
-	int i, k, n = 0, count = 0;
+	int m, k, n;
+	int count = 0;
 
 	n = va_arg(list, int);
-	if (n <= INT_MAX && n >= INT_MIN)
+
+	if (n < 0)
 	{
-		if (n < 0)
-		{
-			n *= -1;
-			_putchar('-');
-			count += 1;
-		}
+		_putchar('-');
+		count ++;
+		n = -n;
+	}
 		m = n;
-		for (k = 0; (m / 10) > 0; k++)
-			m = m / 10;
+		for (k = 1; m >= 10; k *= 10)
+			m /= 10;
 
-		m = n;
-		while (k != 0)
+		while (k > 0)
 		{
-			for (i = 0; i < k; i++)
-				m = m / 10;
-
-			m = m % 10;
-			_putchar(m + '0');
+			_putchar((n / k) + '0');
 			count++;
-			k--;
-			m = n;
+			n %= k;
+			k /= 10;
 		}
-		_putchar(m % 10 + '0');
-		count++;
-	}
-	else
-	{
-		return (-1);
-	}
 	return (count);
 }

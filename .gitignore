@@ -1,11 +1,8 @@
 *
+*~
 !/*
 !*.*
 *main.c
 *.o
 *.out
-<<<<<<< HEAD
 !man_3_printf
-=======
-!man_3_printf
->>>>>>> feat/manpage

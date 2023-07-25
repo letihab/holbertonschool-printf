@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, count, find;
+	int i, j, count;
 	va_list list;
 	set arguments[] = {
 		{'c', print_char},
@@ -25,31 +25,33 @@ int _printf(const char *format, ...)
 
 	count = 0;
 
-	for (i = 0; format[i]; i++)
+	for (i = 0; format && *(format + i) != '\0'; i++)
 	{
-		find = 0;
-		if (format[i] == '%')
+		if (format[i] != '%')
+			count += _putchar(format[i]);
+		else
 		{
 			for (j = 0; arguments[j].specifier; j++)
 			{
 				if (format[i + 1] == arguments[j].specifier)
 				{
 					count += arguments[j].print(list);
-					find = 1;
 					i++;
 					break;
 				}
 			}
-		}
-
-		if (find != 1)
-		{
-			if (format[i] == '%' )
+			if (arguments[j].specifier == 0 && format[i + 1] != ' ')
 			{
-				count += write(1, "%", 1);
+				if (format[i + 1] != 0)
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					count += 2;
+					i++;
+				}
+				else
+					return (-1);
 			}
-			else
-				count += write(1, (format + i), 1);
 		}
 	}
 	va_end(list);
