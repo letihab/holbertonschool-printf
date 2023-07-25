@@ -19,14 +19,14 @@ int get_functions(const char *format, va_list list, set arguments[])
 		{
 			for (j = 0; arguments[j].specifier; j++)
 			{
-				if (format[i + 1] == arguments[j].specifier)
+				if (format[i + 1] == arguments[j].specifier[0])
 				{
 					count += arguments[j].print(list);
 					i++;
 					break;
 				}
 			}
-			if (arguments[j].specifier == '\0' && format[i + 1] != ' ')
+			if (arguments[j].specifier == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '%')
 				{

@@ -10,10 +10,11 @@ int _printf(const char *format, ...)
 	int count;
 	va_list list;
 	set arguments[] = {
-		{'c', print_char},
-		{'d', print_d},
-		{'i', print_d},
-		{'s', print_str},
+		{"c", print_char},
+		{"d", print_d},
+		{"i", print_d},
+		{"s", print_str},
+		{NULL, NULL},
 	};
 
 	if (format == NULL)
