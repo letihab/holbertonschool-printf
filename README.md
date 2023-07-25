@@ -30,13 +30,13 @@ int main(void)
 
 ```
 #### Current content of the project
-`main.h`
-`man_3_printf*
-`function_op.c`
-`get_functions.c`
-`printf_functions.c`
-`Makefile`
-`_putchar.c`
+-`main.h`
+-`man_3_printf*
+-`function_op.c`
+-`get_functions.c`
+-`printf_functions.c`
+-`Makefile`
+-`_putchar.c`
 
 #### output
 ```sh
