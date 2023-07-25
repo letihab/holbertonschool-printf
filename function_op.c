@@ -25,7 +25,7 @@ int print_str(va_list list)
 	const char *str;
 	int count = 0;
 
-	str = (va_arg(list, const char *));
+	str = va_arg(list, const char *);
 
 	if (str == NULL)
 		str = "(null)";
@@ -53,7 +53,7 @@ int print_d(va_list list)
               if (n < 0)
 		{
 			_putchar('-');
-			count ++ 1;
+			count ++;
 			n = -n;
 		}
 		m = n;
