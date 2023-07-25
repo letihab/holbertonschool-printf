@@ -16,6 +16,9 @@ This is a a custmom version of the printf fuction, which have the most basic fun
 - Add into the argument list `{'specifier character': print_xx}`
 - compile and run.
 ## Exemple of output
+
+#### main file
+```c
 #include "main.h"
 
 int main(void)
@@ -24,6 +27,21 @@ int main(void)
 
     return (0);
 }
+
+```
+#### Current content of the project
+`main.h`
+`man_3_printf*
+`function_op.c`
+`get_functions.c`
+`printf_functions.c`
+`Makefile`
+`_putchar.c`
+
+#### output
+```sh
+Hello, World
+```
 ### How to download it
 
 - You can go on the repository in Github and click on the green button and copy the link or download the zip :
