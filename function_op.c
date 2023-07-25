@@ -10,6 +10,13 @@ int print_char(va_list list)
 	char c;
 
 	c = va_arg(list, int);
+
+	if (c == NULL)
+	{
+		return (0);
+	}
+	else
+		
 	_putchar(c);
 
 	return (1);
