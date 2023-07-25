@@ -13,7 +13,7 @@
 typedef struct Set
 {
 	char specifier;
-	int (*print)(va_list arg);
+	int (*print)(va_list list);
 } set;
 int _printf(const char *format, ...);
 int get_functions(const char *format, va_list list, set arguments[]);

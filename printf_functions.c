@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 		{'c', print_char},
 		{'d', print_d},
 		{'i', print_d},
-		{'s', print_str}
+		{'s', print_str},
 	};
 
 	if (format == NULL)

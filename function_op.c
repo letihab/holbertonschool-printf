@@ -27,7 +27,7 @@ int print_str(va_list list)
 
 	str = va_arg(list, const char *);
 
-	if (str == NULL)
+	if (str == 0)
 		str = "(null)";
 
 	while (*str)
