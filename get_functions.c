@@ -26,16 +26,21 @@ int get_functions(const char *format, va_list list, set arguments[])
 					break;
 				}
 			}
-			if (arguments[j].specifier == 0 && format[i + 1] != ' ')
+			if (arguments[j].specifier == '\0' && format[i + 1] != ' ')
 			{
-				if (format[i + 1] != 0)
+				if (format[i + 1] != '%')
 				{
 					_putchar(format[i]);
+					_putchar(format[i + 1]);
 					count += 2;
 					i++;
 				}
 				else
-					return (-1);
+				{
+					_putchar(format[i + 1]);
+					count += 1;
+					i++;
+				}
 			}
 		}
 	}
