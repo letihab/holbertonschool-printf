@@ -39,6 +39,66 @@ int print_str(va_list list)
 }
 
 /**
+ * print_rot13 - a function that encodes a string using rot13 and
+ * prrint to stdout
+ *
+ * @list: A list of argument of va_list type from stdarg.h
+ * Return: void
+ */
+int print_rot13(va_list list)
+{
+	char *s = va_arg(list, char*);
+	int i, j, count;
+	char *a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *b = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	if (s == NULL)
+		return (0);
+
+	count = 0;
+	for (i = 0; *(s + i); i++)
+	{
+		for (j = 0; *(a + j); j++)
+		{
+			if (*(s + i) == *(a + j))
+			{
+				count += write(1, (b + j), 1);
+				break;
+			}
+		}
+	}
+		return (count);
+}
+/**
+ * print_rev - prints string in reverse
+ *
+ * @list: A variable list of type va_list of stdarg.h
+ * Return: Int - Number of characters printed
+ */
+int print_rev(va_list list)
+{
+	int i, len, count;
+	char *s;
+
+	s = va_arg(list, char*);
+
+	if (*s == '\0')
+		return (0);
+
+	len = 0;
+
+	while (*(s + len))
+		len++;
+
+	count = 0;
+
+	for (i = len - 1; i >= 0; i--)
+	{
+		count += write(1, (s + i), 1);
+	}
+
+	return (count);
+/**
  * print_d - print a decimal number
  * @list: list of argument taken
  * Return: Number

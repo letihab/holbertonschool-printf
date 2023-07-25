@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 		{'d', print_d},
 		{'i', print_d},
 		{'s', print_str},
-		/**{'R', print_rot13},
-		{'r', print_rev},*/
+		{'R', print_rot13},
+		{'r', print_rev},
 	};
 
 	if (format == NULL)
@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 		find = 0;
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				format++;
 			for (j = 0; arguments[j].specifier; j++)
 			{
 				if (format[i + 1] == arguments[j].specifier)
