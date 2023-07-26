@@ -11,7 +11,6 @@ void my_printf(const char* format, ...)
     va_start(args, format);
 
     unsigned int u;
-    int i;
     const char* s;
     char c;
 
