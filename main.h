@@ -21,5 +21,7 @@ int print_str(va_list list);
 int print_char(va_list list);
 int print_d(va_list list);
 int _putchar(char c);
+int print_binary(va_list list);
+unsigned int base_length(unsigned int num, int base);
 
 #endif /* MAIN_H */
