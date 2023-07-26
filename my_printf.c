@@ -10,10 +10,10 @@ void my_printf(const char* format, ...)
 	va_list args;
     va_start(args, format);
 
-    char c;
     unsigned int u;
     int i;
     const char* s;
+    char c;
 
     while ((c = *format++) != '\0') {
         if (c != '%') {
