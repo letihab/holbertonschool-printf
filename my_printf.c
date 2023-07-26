@@ -38,7 +38,7 @@ void my_printf(const char* format, ...)
                     printf("%X", u);
                     break;
                 default:
-                    putchar('%'); // affiche le caractère % lui-même
+                    putchar('%');
                     putchar(c);
             }
         }
