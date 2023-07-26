@@ -11,7 +11,7 @@ int get_functions(const char *format, va_list list, set arguments[])
 {
 	int i = 0, j = 0, count = 0;
 
-	for (i = 0; format && *(format + i) != '\0'; i++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 			count += _putchar(format[i]);
@@ -30,15 +30,13 @@ int get_functions(const char *format, va_list list, set arguments[])
 			{
 				if (format[i + 1] != '%')
 				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					count += 2;
+					count += _putchar(format[i]);
+					count += _putchar(format[i + 1]);
 					i++;
 				}
 				else
 				{
-					_putchar(format[i + 1]);
-					count += 1;
+					count += _putchar(format[i + 1]);
 					i++;
 				}
 			}
