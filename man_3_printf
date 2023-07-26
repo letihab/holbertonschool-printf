@@ -32,8 +32,14 @@ Print an integer.
 .BR %
 A '%' is written. no argument is converted.
 The complete conversion specification is '%%'.
+.SH RETURN
+The return value of _printf is the number of character printed by the function.
 .SH EXEMPLE
-_printf("%s", "Holberton is the best school");
+_printf("%s", "Holberton");
+.TP
+print \: Holberton
+.TP
+Return value = 9
 .SH SEE ALSO
 printf (3)
 .SH AUTHOR
