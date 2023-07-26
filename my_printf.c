@@ -7,19 +7,21 @@
  */
 void my_printf(const char* format, ...)
 {
+	char c;
+	unsigned int u;
 	va_list args;
-    va_start(args, format);
 
-    unsigned int u;
-    const char* s;
-    char c;
-
-    while ((c = *format++) != '\0') {
-        if (c != '%') {
+    while ((c = *format++) != '\0')
+    {
+        if (c != '%')
+	{
             putchar(c);
-        } else {
+        }
+	else
+	{
             c = *format++;
-            switch (c) {
+            switch (c)
+	    {
                 case 'u':
                     u = va_arg(args, unsigned int);
                     printf("%u", u);
@@ -27,7 +29,7 @@ void my_printf(const char* format, ...)
                 case 'o':
                     u = va_arg(args, unsigned int);
                     printf("%o", u);
-		     break;
+                    break;
                 case 'x':
                     u = va_arg(args, unsigned int);
                     printf("%x", u);
