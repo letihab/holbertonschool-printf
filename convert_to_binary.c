@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * base_len - Calculates the length for a number
+ * base_length - Calculates the length for a number
  * @num: The number for which the length is being calculated
  * @base: Base to be calculated by
  * Return: An integer representing the length of a number
