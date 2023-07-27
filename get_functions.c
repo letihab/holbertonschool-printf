@@ -17,31 +17,26 @@ int get_functions(const char *format, va_list list, set arguments[])
 			count += _putchar(format[i]);
 		else
 		{
-			for (j = 0; arguments[j].specifier != NULL; j++)
+			for (j = 0; arguments[j].specifier; j++)
 			{
 				if (format[i + 1] == arguments[j].specifier[0])
 				{
 					count += arguments[j].print(list);
-					i++;
 					break;
 				}
 			}
 			if (arguments[j].specifier == NULL && format[i + 1] != ' ')
 			{
-				if (format[i + 1] != '%')
+				if (format[i + 1] != '\0')
 				{
 					count += _putchar(format[i]);
 					count += _putchar(format[i + 1]);
-					i++;
 				}
 				else
-				{
-					count += _putchar(format[i + 1]);
-					i++;
-				}
+					return (-1);
 			}
+			i++;
 		}
 	}
-	va_end(list);
 	return (count);
 }

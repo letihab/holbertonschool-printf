@@ -77,9 +77,7 @@ int print_d(va_list list)
 		count++;
 	}
 	else
-	{
 		return (-1);
-	}
 
 	return (count);
 }
