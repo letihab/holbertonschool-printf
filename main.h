@@ -21,6 +21,5 @@ int print_str(va_list list);
 int print_char(va_list list);
 int print_d(va_list list);
 int _putchar(char c);
-void my_printf(const char* format, ...);
 
 #endif /* MAIN_H */
