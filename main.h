@@ -27,6 +27,6 @@ int convert_o(va_list list);
 int convert_hex(va_list list);
 int convert_HEX(va_list list);
 int hex_check(int num, char x);
-void custom_printf(const char *format, ...);
+void convert_f(const char *format, ...);
 
 #endif /* MAIN_H */
