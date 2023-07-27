@@ -25,7 +25,7 @@ int rev_s(va_list arg)
 
 /**
  * ROT13 - print a string encoded using rot13
- * @flag: Flag parameters
+ * @arg: string passe in arg
  * Return: number of printed char
  */
 int ROT13(va_list arg)

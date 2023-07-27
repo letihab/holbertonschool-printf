@@ -11,10 +11,10 @@ int print_unum(unsigned int n)
 
 	num = n;
 
-	for (; num / div > 9; )
+	while (num / div > 9)
 		div *= 10;
 
-	while(div != 0)
+	while (div != 0)
 	{
 		len += _putchar('0' + num / div);
 		num %= div;
