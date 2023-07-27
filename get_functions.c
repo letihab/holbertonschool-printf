@@ -22,26 +22,23 @@ int get_functions(const char *format, va_list list, set arguments[])
 				if (format[i + 1] == arguments[j].specifier[0])
 				{
 					count += arguments[j].print(list);
-					i++;
 					break;
 				}
 			}
 			if (arguments[j].specifier == NULL && format[i + 1] != ' ')
 			{
-				if (format[i + 1] != '%')
+				if (format[i + 1] != '\0' && format[i + 1] != '%')
 				{
 					count += _putchar(format[i]);
 					count += _putchar(format[i + 1]);
-					i++;
 				}
-				else
-				{
+				else if (format[i + 1] == '%')
 					count += _putchar(format[i + 1]);
-					i++;
-				}
+				else
+					return (-1);
 			}
+			i = i + 1;
 		}
 	}
-	va_end(list);
 	return (count);
 }

@@ -32,9 +32,8 @@ int print_str(va_list list)
 
 	while (*str)
 	{
-		_putchar(*str);
+		count += _putchar(*str);
 		str++;
-		count++;
 	}
 
 	return (count);
@@ -78,9 +77,7 @@ int print_d(va_list list)
 		count++;
 	}
 	else
-	{
 		return (-1);
-	}
 
 	return (count);
 }
