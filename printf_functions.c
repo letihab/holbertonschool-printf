@@ -15,11 +15,7 @@ int _printf(const char *format, ...)
 		{"i", print_d},
 		{"s", print_str},
 		{"b", convert_b},
-<<<<<<< HEAD
 		{"u", print_unsigned},
-=======
-		{"u", print_integer},
->>>>>>> feat/function_binaire
 		{"o", convert_o},
 		{"x", convert_hex},
 		{"X", convert_HEX},
