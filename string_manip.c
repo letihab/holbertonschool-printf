@@ -14,7 +14,7 @@ int rev_s(va_list arg)
 	while (s[length] != '\0')
 		length++;
 
-	for (i = length; i >= 0; i--)
+	for (i = length; i > 0; i--)
 	{
 		_putchar(s[i]);
 		nb_char++;
@@ -31,21 +31,21 @@ int rev_s(va_list arg)
 int ROT13(va_list arg)
 {
 	int i, j, nb_char = 0;
-	char ch1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char ch2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char array1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char array2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *str = va_arg(arg, char *);
 
 	for (i = 0; str[i]; i++, nb_char++)
 	{
-		for (j = 0; ch1[j]; j++)
+		for (j = 0; array1[j]; j++)
 		{
-			if (str[i] == ch1[j])
+			if (str[i] == array1[j])
 			{
-				_putchar(ch2[j]);
+				_putchar(array2[j]);
 				break;
 			}
 		}
-		if (str[i] != ch1[j])
+		if (str[i] != array1[j])
 			_putchar(str[i]);
 	}
 
