@@ -40,8 +40,6 @@ int get_functions(const char *format, va_list list, set arguments[])
 					i++;
 				}
 			}
-			else
-				return (-1);
 		}
 	}
 	va_end(list);
