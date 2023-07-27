@@ -28,17 +28,14 @@ int get_functions(const char *format, va_list list, set arguments[])
 			}
 			if (arguments[j].specifier == NULL && format[i + 1] != ' ')
 			{
-				if (format[i + 1] != '%')
+				if (format[i + 1] != '\0')
 				{
 					count += _putchar(format[i]);
 					count += _putchar(format[i + 1]);
 					i++;
 				}
 				else
-				{
-					count += _putchar(format[i + 1]);
-					i++;
-				}
+					return (-1);
 			}
 		}
 	}
