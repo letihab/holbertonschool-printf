@@ -32,9 +32,8 @@ int print_str(va_list list)
 
 	while (*str)
 	{
-		_putchar(*str);
+		count += _putchar(*str);
 		str++;
-		count++;
 	}
 
 	return (count);
