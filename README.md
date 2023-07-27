@@ -5,15 +5,17 @@
 
 ## Description
 
-This is a a custmom version of the printf fuction, which have the most basic functionalities such as printing a string, a character and also printing an integer number.
+This is a a custom version of the printf fuction, which have the most basic functionalities such as printing a string, a character and also printing an integer number.
 
 ## Requirement
 
 - Ubuntu 20.04.06 LTS
 
-- include header file "main.h"
+- include header file ```"main.h"```
 
 - compilation line : ```Bash gcc -Wall -Werror -Wextra -pedantic *.c```
+
+- ```Bash gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)```
 
 ## How it's working
 - Using a composite data type such as struct which will contain the declaration of a char pointer *specifier and a pointer to a function called *print, this will be receiving a type val_list which will be the list of arguments from format, that will be printed in case there is a match between the struct first argument (specifier) and the format.
