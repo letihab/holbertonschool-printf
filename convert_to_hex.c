@@ -9,7 +9,7 @@ int convert_hex(va_list list)
 
 {
 	unsigned int num;
-	int len, rem_num;
+	int len, rem_num, r_value;
 	char *hex_rep;
 
 	num = va_arg(list, unsigned int);
@@ -36,13 +36,13 @@ int convert_hex(va_list list)
 		num = num / 16;
 	}
 	hex_rep[len] = '\0';
-
+	r_value = len;
 	for (len = len - 1; len >= 0; len--)
 		_putchar(hex_rep[len]);
 
 	free(hex_rep);
 
-	return (len);
+	return (r_value);
 }
 
 
@@ -54,7 +54,7 @@ int convert_hex(va_list list)
 int convert_HEX(va_list list)
 {
 	unsigned int num;
-	int len, rem_num;
+	int len, rem_num, r_value;
 	char *hex_rep;
 
 	num = va_arg(list, unsigned int);
@@ -82,13 +82,13 @@ int convert_HEX(va_list list)
 		num = num / 16;
 	}
 	hex_rep[len] = '\0';
-
+	r_value = len;
 	for (len = len - 1; len >= 0; len--)
 		_putchar(hex_rep[len]);
 
 	free(hex_rep);
 
-	return (len);
+	return (r_value);
 }
 
 /**

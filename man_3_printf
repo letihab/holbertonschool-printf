@@ -32,6 +32,21 @@ Print an integer.
 .BR %
 A '%' is written. no argument is converted.
 The complete conversion specification is '%%'.
+.BR %b
+Convert an integer in a binary code and print it.
+.TP
+.BR %u
+Convert an integer in a unsigned int and print it.
+.TP
+.BR %o
+Convert an integer in an octal and print it.
+.TP
+.BR %x
+Convert an integer into an Hexadecimal in lowercase and print it.
+.TP
+.BR %X
+Convert an integer into an Hexadecimal in uppercase and print it.
+.TP
 .SH RETURN
 The return value of _printf is the number of character printed by the function.
 .SH EXEMPLE

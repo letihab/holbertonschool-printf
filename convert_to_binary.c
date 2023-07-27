@@ -78,7 +78,7 @@ int convert_b(va_list list)
 int convert_o(va_list list)
 {
 	unsigned int num;
-	int len;
+	int len, r_value;
 	char *octal_rep;
 
 	num = va_arg(list, unsigned int);
@@ -99,10 +99,10 @@ int convert_o(va_list list)
 	}
 
 	octal_rep[len] = '\0';
-
+	r_value = len;
 	for (len = len - 1; len >= 0; len--)
 		_putchar(octal_rep[len]);
 
 	free(octal_rep);
-	return (len);
+	return (r_value);
 }
