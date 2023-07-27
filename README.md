@@ -24,6 +24,7 @@ flowchart TB
 classDef print fill:#f98
 classDef quest fill:#9f9
 classDef Incr fill:#bbf
+
 A((Start)) --> B[Declare variables]
 style A fill:#0f0
 style End fill:#f00
@@ -114,30 +115,30 @@ This is a main you can use to tested out the _ptrintf function
 */
 int  main(void)
 {
-int len;
-int len2;
-unsigned  int ui;
-void  *addr;
+    int len;
+    int len2;
+    unsigned  int ui;
+    void  *addr;
 
-len =  _printf("Let's try to printf a simple sentence.\n");
-len2 =  printf("Let's try to printf a simple sentence.\n");
-ui = (unsigned  int)INT_MAX +  1024;
-_printf("Length:[%d, %i]\n", len, len);
-printf("Length:[%d, %i]\n", len2, len2);
-_printf("Negative:[%d]\n", -762534);
-printf("Negative:[%d]\n", -762534);
-_printf("Character:[%c]\n", 'H');
-printf("Character:[%c]\n", 'H');
-_printf("String:[%s]\n", "I am a string !");
-printf("String:[%s]\n", "I am a string !");
-len =  _printf("Percent:[%%]\n");
-len2 =  printf("Percent:[%%]\n");
-_printf("Len:[%d]\n", len);
-printf("Len:[%d]\n", len2);
-_printf("Unknown:[%r]\n");
-printf("Unknown:[%r]\n");
+    len =  _printf("Let's try to printf a simple sentence.\n");
+    len2 =  printf("Let's try to printf a simple sentence.\n");
+    ui = (unsigned  int)INT_MAX +  1024;
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+    _printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+    len =  _printf("Percent:[%%]\n");
+    len2 =  printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    _printf("Unknown:[%r]\n");
+    printf("Unknown:[%r]\n");
 
-return (0);
+    return (0);
 }
 ```
 compile and run the executable
