@@ -27,7 +27,8 @@ int convert_o(va_list list);
 int convert_hex(va_list list);
 int convert_HEX(va_list list);
 int hex_check(int num, char x);
-void convert_f(const char *format, ...);
+int print_unum(unsigned int n);
+int unsigned_i(va_list list);
 int rev_s(va_list arg);
 int ROT13(va_list arg);
 
