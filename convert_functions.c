@@ -59,17 +59,3 @@ void custom_printf(const char *format, ...)
 
     va_end(args);
 }
-
-int main() {
-    unsigned int num_u = 42;
-    unsigned int num_o = 52;
-    unsigned int num_x = 42;
-    unsigned int num_X = 255;
-
-    custom_printf("Valeur de u : %u\n", num_u);
-    custom_printf("Valeur de o : %o\n", num_o);
-    custom_printf("Valeur de x : %x\n", num_x);
-    custom_printf("Valeur de X : %X\n", num_X);
-
-    return 0;
-}

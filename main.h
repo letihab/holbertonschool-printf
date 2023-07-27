@@ -28,5 +28,7 @@ int convert_hex(va_list list);
 int convert_HEX(va_list list);
 int hex_check(int num, char x);
 void custom_printf(const char *format, ...);
+int rev_s(va_list arg);
+int ROT13(va_list arg);
 
 #endif /* MAIN_H */

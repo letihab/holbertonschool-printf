@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		{"o", convert_o},
 		{"x", convert_hex},
 		{"X", convert_HEX},
+		{"r", rev_s},
+		{"R", ROT13},
 		{NULL, NULL},
 	};
 

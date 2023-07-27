@@ -47,6 +47,12 @@ Convert an integer into an Hexadecimal in lowercase and print it.
 .BR %X
 Convert an integer into an Hexadecimal in uppercase and print it.
 .TP
+.BR %r
+reverse a string and print it.
+.TP
+.BR %R
+Print a string, with 13 letter decale.
+.TP
 .SH RETURN
 The return value of _printf is the number of character printed by the function.
 .SH EXEMPLE
