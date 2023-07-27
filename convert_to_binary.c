@@ -115,7 +115,11 @@ int convert_o(va_list list)
  * @list: List of the arguments passed to the function
  * Return: Number of characters printed
  */
+<<<<<<< HEAD
 int print_hex(va_list list)
+=======
+int convert_hex(va_list list)
+>>>>>>> feat/function_binaire
 {
 	unsigned int num;
 	int len;
@@ -161,7 +165,11 @@ int print_hex(va_list list)
  * @list: List of the arguments passed to the function
  * Return: Number of characters printed
  */
+<<<<<<< HEAD
 int print_heX(va_list list)
+=======
+int convert_HEX(va_list list)
+>>>>>>> feat/function_binaire
 {
 	unsigned int num;
 	int len;

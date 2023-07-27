@@ -21,6 +21,15 @@ int print_str(va_list list);
 int print_char(va_list list);
 int print_d(va_list list);
 int _putchar(char c);
+<<<<<<< HEAD
 void my_printf(const char* format, ...);
+=======
+int convert_b(va_list list);
+unsigned int base_length(unsigned int num, int base);
+int convert_o(va_list list);
+int convert_hex(va_list list);
+int convert_HEX(va_list list);
+int hex_check(int num, char x);
+>>>>>>> feat/function_binaire
 
 #endif /* MAIN_H */
